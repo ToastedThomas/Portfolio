@@ -1,0 +1,169 @@
+html {
+  background-color: #252525;
+  font-family: Helvetica;
+}
+
+.sidenav {
+  background-color: #111;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sidenav a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 8px 5px 8px;
+  color: #CCCCCC;
+}
+.sidenav a:visited {
+  color: #CCCCCC;
+}
+.sidenav a:hover {
+  color: white;
+  background-color: #1f1f1f;
+}
+
+h2 {
+  margin-left: 70px;
+  color: white;
+}
+
+.aboutInfo {
+  margin-left: 70px;
+  color: #6b6b6b;
+}
+.aboutInfo a {
+  display: block;
+  margin-top: 1em;
+  text-decoration: none;
+  color: #CCCCCC;
+}
+
+.sandBox {
+  margin-left: 70px;
+}
+
+.tileHolder {
+  display: flex;
+  margin-left: 70px;
+}
+.tile {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+.tile img {
+  width: 150px;
+  height: 150px;
+}
+.tile p {
+  position: relative;
+  top: -60%;
+  margin: 0px;
+  opacity: 0%;
+  color: white;
+}
+@keyframes darken {
+  from {filter: brightness(100%);}
+  to {filter: brightness(25%);}
+}
+@keyframes text {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
+}
+.tile:hover p {
+  animation: text 1s both;
+}
+.tile:hover img {
+  animation: darken 1s both;
+}
+
+
+.modal {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100% ;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, .65);
+}
+.modalContent {
+  background-color: whitesmoke;
+  margin: 2% auto 2% auto;
+  width: 75%;
+}
+.modalContent h1 {
+  padding: 40px 20px 20px 20px;
+}
+.modalContent h2 {
+  width: fit-content;
+  margin: 10px auto;
+  padding: 10px;
+  color: black;
+}
+.modalContent img {
+  width: 38%;
+  height: 38%;
+  margin: auto;
+  padding: 20px;
+  display: block;
+}
+.modalP1 {
+  text-indent: 20px;
+  padding: 20px;
+  line-height: 160%;
+}
+.close {
+  font-size: 3em;
+  margin: 5px 20px;
+  float: right;
+  color: grey;
+}
+@keyframes closeDarken {
+  from {color:grey;}
+  to {color: black;}
+}
+.close:hover {
+  animation: closeDarken 0.5s both;
+}
+
+@keyframes disappear {
+  from {opacity: 100%;}
+  to {opacity: 0%;}
+}
+#clickToPour {
+  pointer-events: none;
+  position: absolute;
+  width: 18em;
+  height: 18em;
+  left: 55%;
+}
+#ccModal {
+  display: none;
+}
+#fsModal {
+  display: none;
+}
+#drModal {
+  display: none;
+}
+#gbModal img {
+  width: 20%;
+  height: 20%;
+}
+#piModal {
+  display: none;
+}
+#gbModal {
+  display: none;
+}
+#artModal1 {
+  display: none;
+}
+#artModal2 {
+  display: none;
+}

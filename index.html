@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="sidenav">
+      <a href="#">Home</a>
+      <a href="#work">Work</a>
+      <a href="#art">Art</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <h2>Hi! I'm Blake, and I make games, tools, and sometimes art.</h2>
+    <img id="clickToPour" src="images/clickto.png" />
+    <canvas id="cvs" class="sandBox"></canvas>
+    <h2 id="work">Projects I worked on</h2>
+    <div class="tileHolder">
+      <div class="tile" id="cc">
+        <img src="images/captures/ccThumb.png" />
+        <p>Crop Clicker</p>
+      </div>
+      <div class="tile" id="fs">
+        <img src="images/captures/fsThumb.png" />
+        <p>Falling Sand</p>
+      </div>
+      <div class="tile" id="dr">
+        <img src="images/captures/drTile.png" />
+        <p>Dice Roller</p>
+      </div>
+      <div class="tile" id="pi">
+        <img src="images/captures/piTile.png" />
+        <p>PokeInfo</p>
+      </div>
+      <div class="tile" id="gb">
+        <img src="images/captures/gbTile.png" />
+        <p>Geometry Blaster</p></div>
+    </div>
+    <h2 id="art">Art</h2>
+    <div class="tileHolder">
+      <img id="r2s" width="20%" height="20%" src="images/art/road2space.jpg" />
+      <img id="yt" width="15%" height="15%" src="images/art/ytpic.jpg" />
+    </div>
+    <h2 id="about">About Me</h2>
+      <p class="aboutInfo">My name is Blake and although I have one year of programming experience, I've' always worked with technology my entire life. From retro console repairs, to digital art, 
+        to PC building, to video editing I've done many things, and when I stumble across something new I'm always excited to learn and understand whatever it is.
+
+        My favorite hobbies outside of programming would be hiking, cooking, and growing bonsai trees.</p>
+    <h2 id="contact">Where to reach me</h2>
+        <div class="aboutInfo">
+          <a href="https://www.linkedin.com/in/blake-helser-761b21243/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/ToastedThomas" target="_blank">Github</a>
+        </div>
+
+    <!--Modal Window stuff down here-->
+    <div id="modal" class="modal">
+      <div id="ccModal" class="modalContent">
+        <p class="close">x</p>
+        <h1>Crop Clicker</h1>
+        <p class="modalP1">This was my first project I began work on while I taught myself programming. Crop clicker is a web browser game that 
+          is heavily inspired from Cookie Clicker by Orteil. I used this project as a way to build on my HTML, CSS, and JavaScript knowledge, as well as
+          to learn other skills such as launching, updating, and bug fixing a live website. I also made all the art and sound for this project myself.</p>
+        <img src="images/captures/ccScreen1.PNG" />
+        <h2>Check out Crop Clicker <a href="https://www.cropclicker.com" target="_blank">Here!</a></h2>
+      </div>
+      <div id="fsModal" class="modalContent">
+        <p class="close">x</p>
+        <h1>Falling Sand</h1>
+        <p class="modalP1">Falling Sand is a simulator of exactly what it says, falling sand. This project was meant to refine my skills as a JavaScript
+          developer, making me think logically and creatively. 
+        </p>
+        <img src="images/captures/fsScreen1.png" />
+        <h2>Check out Falling Sand <a href="https://toastedthomas.github.io/Falling-Sand/" target="_blank">Here!</a></h2>
+      </div>
+      <div id="drModal" class="modalContent">
+        <p class="close">x</p>
+        <h1>Dice Roller</h1>
+        <p class="modalP1">I originally started this project to mess around with arrays and random number generation. As time went on I added multiple dice types
+           and dice statistics. My goal with this project is to add more customization options and features while keeping this tool lightweight and fast. During experimental
+           testing, I was able to roll 250,000 dice at once!</p>
+        <img src="images/captures/drScreen1.PNG" />
+        <h2>Check out Dice Roller <a href="https://toastedthomas.github.io/Dice-Roller-Js/" target="_blank">Here!</a></h2>
+      </div>
+      <div id="piModal" class="modalContent">
+        <p class="close">x</p>
+        <h1>PokeInfo</h1>
+        <p class="modalP1">This project was my introduction to working with APIs and working with other peoples documentation. My goal was to take in data from the PokeAPI
+           database and display the information in an easy to understand format. Reading and fully understanding someone else's code is a very important skill to have,
+            and working on this project helped refine that skill for me.</p>
+        <img src="images/captures/piScreen1.PNG" />
+        <h2>Check out PokeInfo <a href="https://toastedthomas.github.io/PokeInfo/" target="_blank">Here!</a></h2>
+      </div>
+      <div id="gbModal" class="modalContent">
+        <p class="close">x</p>
+        <h1>Geometry Blaster</h1>
+        <p class="modalP1">Geometry Blaster is the second game I worked on. This project introduced me to Android app development using the Unity game engine. While working on
+          this game, I became familiar with practices such as files interacting and changing each other's values, reading documentation, and being aware of code efficiency.
+        </p>
+        <img src="images/captures/gbScreen1.jpg" />
+        <h2>Geometry Blasters is coming to android soon!</h2>
+      </div>
+      <div id="artModal1" class="modalContent">
+        <p class="close">x</p>
+        <img src="images/art/road2space.jpg" />
+      </div>
+      <div id="artModal2" class="modalContent">
+        <p class="close">x</p>
+        <img src="images/art/ytpic.jpg" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
