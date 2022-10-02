@@ -11,47 +11,60 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
-    <h2>Hi! I'm Blake, and I make games, tools, and sometimes art.</h2>
-    <img id="clickToPour" src="images/clickto.png" />
-    <canvas id="cvs" class="sandBox"></canvas>
-    <h2 id="work">Projects I worked on</h2>
-    <div class="tileHolder">
-      <div class="tile" id="cc">
-        <img src="images/captures/ccThumb.png" />
-        <p>Crop Clicker</p>
-      </div>
-      <div class="tile" id="fs">
-        <img src="images/captures/fsThumb.PNG" />
-        <p>Falling Sand</p>
-      </div>
-      <div class="tile" id="dr">
-        <img src="images/captures/drTile.png" />
-        <p>Dice Roller</p>
-      </div>
-      <div class="tile" id="pi">
-        <img src="images/captures/piTile.png" />
-        <p>PokeInfo</p>
-      </div>
-      <div class="tile" id="gb">
-        <img src="images/captures/gbTile.png" />
-        <p>Geometry Blaster</p></div>
+    <div>
+      <h2>Hi! I'm Blake, and I make games, tools, and sometimes art.</h2>
+      <img id="clickToPour" src="images/clickto.png" />
+      <canvas id="cvs" class="sandBox"></canvas>
     </div>
-    <h2 id="art">Art</h2>
-    <div class="tileHolder">
-      <img id="r2s" width="20%" height="20%" src="images/art/road2space.jpg" />
-      <img id="yt" width="15%" height="15%" src="images/art/ytpic.jpg" />
-    </div>
-    <h2 id="about">About Me</h2>
-      <p class="aboutInfo">My name is Blake and although I have one year of programming experience, I've' always worked with technology my entire life. From retro console repairs, to digital art, 
-        to PC building, to video editing I've done many things, and when I stumble across something new I'm always excited to learn and understand whatever it is.
-
-        My favorite hobbies outside of programming would be hiking, cooking, and growing bonsai trees.</p>
-    <h2 id="contact">Where to reach me</h2>
-        <div class="aboutInfo">
-          <a href="https://www.linkedin.com/in/blake-helser-761b21243/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/ToastedThomas" target="_blank">Github</a>
+    <section class="padded">
+      <h2 id="work">Projects I worked on</h2>
+      <div class="tileHolder">
+        <div class="tile" id="cc">
+          <img src="images/captures/ccThumb.png" />
+          <p>Crop Clicker</p>
         </div>
+        <div class="tile" id="fs">
+          <img src="images/captures/fsThumb.png" />
+          <p>Falling Sand</p>
+        </div>
+        <div class="tile" id="ss">
+          <img src="images/captures/ssTile.png" />
+          <p>Sample Survey Form</p>
+        </div>
+        <div class="tile" id="dr">
+          <img src="images/captures/drTile.png" />
+          <p>Dice Roller</p>
+        </div>
+        <div class="tile" id="pi">
+          <img src="images/captures/piTile.png" />
+          <p>PokeInfo</p>
+        </div>
+        <div class="tile" id="gb">
+          <img src="images/captures/gbTile.png" />
+          <p>Geometry Blaster</p></div>
+      </div>
+    </section>
+    <section class="padded">
+      <h2 id="art">Art</h2>
+      <div class="tileHolder">
+        <img id="r2s" width="20%" height="20%" src="images/art/road2space.jpg" />
+        <img id="yt" width="15%" height="15%" src="images/art/ytpic.jpg" />
+      </div>
+    </section>
+    <section class="padded">
+      <h2 id="about">About Me</h2>
+        <p class="aboutInfo">My name is Blake and although I have one year of programming experience, I've worked with technology my entire life. From retro console repairs, to digital art, 
+          to PC building, to video editing I pursue many hobbies, and when I stumble across something new I'm always excited to learn and understand whatever it is.
 
+          My favorite hobbies outside of programming would be hiking, cooking, and growing bonsai trees.</p>
+    </section>
+    <section class="padded">
+      <h2 id="contact">Where to reach me</h2>
+          <div class="aboutInfo">
+            <a href="https://www.linkedin.com/in/blake-helser-761b21243/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ToastedThomas" target="_blank">Github</a>
+          </div>
+    </section>
     <!--Modal Window stuff down here-->
     <div id="modal" class="modal">
       <div id="ccModal" class="modalContent">
@@ -98,6 +111,13 @@
         </p>
         <img src="images/captures/gbScreen1.jpg" />
         <h2>Geometry Blasters is coming to android soon!</h2>
+      </div>
+      <div id="ssModal" class="modalContent">
+        <p class="close">x</p>
+        <h1>Sample Survey Form</h1>
+        <p class="modalP1">This is a basic survey that showcases some of my skills I learned while taking the 'Responsive Web Design' course at freeCodeCamp.</p>
+        <img src="images/captures/ssScreen1.png" />
+        <h2>Check out this example of my CSS skills <a href="https://toastedthomas.github.io/Sample-Survey/" target="_blank">Here!</a></h2>
       </div>
       <div id="artModal1" class="modalContent">
         <p class="close">x</p>

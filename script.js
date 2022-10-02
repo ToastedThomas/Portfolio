@@ -1,21 +1,29 @@
 const closeBtn = document.getElementsByClassName('close');
 const modalMain = document.getElementById('modal');
 
-const projectTiles = [document.getElementById('cc'), document.getElementById('fs'), document.getElementById('dr'), document.getElementById('pi'), document.getElementById('gb'), document.getElementById('r2s'), document.getElementById('yt')]
-const modalContent = [document.getElementById('ccModal'), document.getElementById('fsModal'), document.getElementById('drModal'), document.getElementById('piModal'), document.getElementById('gbModal'), document.getElementById('artModal1'), document.getElementById('artModal2')]
+const projectTiles = [document.getElementById('cc'), document.getElementById('fs'), document.getElementById('dr'), document.getElementById('pi'), document.getElementById('gb'), document.getElementById('r2s'), document.getElementById('yt'), document.getElementById('ss')]
+const modalContent = [document.getElementById('ccModal'), document.getElementById('fsModal'), document.getElementById('drModal'), document.getElementById('piModal'), document.getElementById('gbModal'), document.getElementById('artModal1'), document.getElementById('artModal2'), document.getElementById('ssModal')]
 
 
 // array.from takes the Dom collection and turns it into an array to use
 Array.from(closeBtn).forEach((element) => {
   element.onclick = function() {
-    modalMain.style.display = "none";
-    modalContent.forEach(element => {element.style.display = "none";})
+    modalMain.style.animation = "disappear 0.25s";
+    setTimeout(function() {
+      modalMain.style.display = "none";
+      modalContent.forEach(element => {element.style.display = "none";})
+      modalMain.style.animation = "none";
+    }, 240);
   };
 });
 
 
 projectTiles.forEach((element, index) => {
   element.onclick = function() {
+    modalMain.style.animation = "disappear 0.25s reverse";
+    setTimeout(function() {
+      modalMain.style.animation = "none";
+    }, 240);
     modalMain.style.display = "block";
     modalContent[index].style.display = "block";
   }

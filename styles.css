@@ -2,9 +2,19 @@ html {
   background-color: #252525;
   font-family: Helvetica;
 }
+section:nth-child(2n - 1) {
+  background-color: #1c1c1c;
+}
+.padded{
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
 
 .sidenav {
-  background-color: #111;
+  background-color: #0f0f0f;
+  border-right: 1px solid #7a7aba;
+  width: 5%;
+  min-width: 75px;
   height: 100%;
   position: fixed;
   top: 0;
@@ -25,12 +35,13 @@ html {
 }
 
 h2 {
-  margin-left: 70px;
+  margin-left: 6%;
   color: white;
 }
 
+
 .aboutInfo {
-  margin-left: 70px;
+  margin-left: 6%;
   color: #6b6b6b;
 }
 .aboutInfo a {
@@ -41,21 +52,27 @@ h2 {
 }
 
 .sandBox {
-  margin-left: 70px;
+  margin-left: 6%;
 }
 
 .tileHolder {
   display: flex;
-  margin-left: 70px;
+  margin-left: 6%;
+}
+.tileHolder img {
+  cursor: pointer;
 }
 .tile {
   width: 150px;
   height: 150px;
   text-align: center;
+  cursor: pointer;
 }
 .tile img {
   width: 150px;
   height: 150px;
+  filter: brightness(100%);
+  transition: filter 1s;
 }
 .tile p {
   position: relative;
@@ -63,20 +80,16 @@ h2 {
   margin: 0px;
   opacity: 0%;
   color: white;
-}
-@keyframes darken {
-  from {filter: brightness(100%);}
-  to {filter: brightness(25%);}
-}
-@keyframes text {
-  from {opacity: 0%;}
-  to {opacity: 100%;}
+  opacity: 0%;
+  transition: opacity .5s;
 }
 .tile:hover p {
-  animation: text 1s both;
+  transition: opacity .5s;
+  opacity: 100%;
 }
 .tile:hover img {
-  animation: darken 1s both;
+  filter: brightness(25%);
+  transition: filter 1s;
 }
 
 
@@ -93,6 +106,7 @@ h2 {
 }
 .modalContent {
   background-color: whitesmoke;
+  border-radius: 1em;
   margin: 2% auto 2% auto;
   width: 75%;
 }
@@ -106,8 +120,7 @@ h2 {
   color: black;
 }
 .modalContent img {
-  width: 38%;
-  height: 38%;
+  width: 50%;
   margin: auto;
   padding: 20px;
   display: block;
@@ -122,6 +135,7 @@ h2 {
   margin: 5px 20px;
   float: right;
   color: grey;
+  cursor: pointer;
 }
 @keyframes closeDarken {
   from {color:grey;}
@@ -159,6 +173,9 @@ h2 {
   display: none;
 }
 #gbModal {
+  display: none;
+}
+#ssModal {
   display: none;
 }
 #artModal1 {
