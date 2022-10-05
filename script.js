@@ -119,6 +119,7 @@ function draw() {
 let placingInterval;
 let cursorX;
 let cursorY;
+let canvas = document.querySelector("canvas").getBoundingClientRect();
 let marginVal = parseInt(getComputedStyle(cvs).getPropertyValue('margin-left'));
 
 cvs.onmousemove = function(event) {
@@ -134,7 +135,7 @@ cvs.onmousedown = function(event) {
 
 function placing(event) {
   marginVal = parseInt(getComputedStyle(cvs).getPropertyValue('margin-left'));
-  setBuf((Math.floor(cursorX/10) - 1 - Math.floor(marginVal/10)) /* + (Math.floor(Math.random() * 3) - 1)*/, Math.floor(cursorY/10) - 8, COFFEE);
+  setBuf((Math.floor(cursorX/10) - 1 - Math.floor(marginVal/10)) /* + (Math.floor(Math.random() * 3) - 1)*/, Math.floor((cursorY + scrollY)/10) - 8, COFFEE);
   //console.log(Math.floor(cursorX/10) - 1)
   //console.log(Math.floor(cursorY/10) - 1)
 }
