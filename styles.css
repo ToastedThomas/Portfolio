@@ -1,48 +1,171 @@
+* {
+  margin: 0px;
+}
 html {
   background-color: #252525;
   font-family: Helvetica;
+  overflow-x: hidden;
 }
+
+/* scrollbar for chrome, edge, safari, and opera */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border: #555 1px solid;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #111;
+}
+
+/* scrollbar for firefox */
+@supports (scrollbar-color: #555 #222) {
+  * {
+    scrollbar-color: #555 #222;
+    scrollbar-width: thin;
+  }
+}
+
+:root {
+  --gradient1: rgb(98, 0, 234);
+  --gradient2: rgb(246, 13, 255);
+  --accent1: rgb(183, 12, 189);
+}
+
+/* navigation styles */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #0f0f0f;
+  border-right: 1px solid #7a7aba;
+  width: 100%;
+  height: 7vh;
+  min-height: 40px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+nav a {
+  text-decoration: none;
+  text-align: center;
+  width: 75px;
+  padding-top: 2.2vh;
+  color: #CCCCCC;
+  transition: background-color .5s ease, color .5s ease;
+}
+nav a:visited {
+  color: #CCCCCC;
+}
+nav a:hover {
+  color: white;
+  background-color: var(--accent1);
+}
+
+
 section:nth-child(2n - 1) {
   background-color: #1c1c1c;
 }
-.padded{
+section{
   padding-top: 3em;
   padding-bottom: 3em;
 }
-
-.sidenav {
-  background-color: #0f0f0f;
-  border-right: 1px solid #7a7aba;
-  width: 5%;
-  min-width: 75px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+section h2 {
+  scroll-margin-top: 60px;
+  scroll-snap-margin-top: 60px;
 }
-.sidenav a {
-  display: block;
-  text-decoration: none;
-  padding: 10px 8px 5px 8px;
-  color: #CCCCCC;
-}
-.sidenav a:visited {
-  color: #CCCCCC;
-}
-.sidenav a:hover {
-  color: white;
-  background-color: #1f1f1f;
-}
-
 h2 {
-  margin-left: 6%;
+  margin: 0px 0px 30px 60px;
   color: white;
 }
 
+/* cool tile styles */
+#tileBG {
+  background: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2),
+    var(--gradient1)
+  );
+  background-size: 200%;
+  animation: backgroundMove 10s linear infinite;
+}
+#tiles {
+  
+  height: 80vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+}
+.tile {
+  position: relative;
+  cursor: pointer;
+}
+.tile::before {
+  background-color: rgb(20, 20, 20);
+  content: "";
+  position: absolute;
+  inset: 0.5px;
+}
+.tile:hover::before {
+  background-color: rgb(25, 25, 25);
+}
+@keyframes backgroundMove {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
 
+/* title text and icon in tiles */
+#title {
+  color: white;
+  font-size: 4vw;
+  margin: 0px;
+  opacity: 1;
+  pointer-events: none;
+  width: fit-content;
+  transition: opacity 1000ms ease;
+  z-index: 3;
+}
+body.toggled > #title {
+  opacity: 0;
+}
+#icon {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 60vmin;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1000ms ease;
+  z-index: 1;
+}
+body.toggled > #icon {
+  opacity: 1;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+.fancyText {
+  font-family: Consolas;
+  color: var(--gradient2);
+}
+
+/* about section style */
 .aboutInfo {
   margin-left: 6%;
+  margin-right: 6%;
   color: #6b6b6b;
+  line-height: 1.5em;
 }
 .aboutInfo a {
   display: block;
@@ -50,49 +173,72 @@ h2 {
   text-decoration: none;
   color: #CCCCCC;
 }
-
-.sandBox {
-  margin-left: 6%;
+.aboutInfo a:hover {
+  color: #ffffff;
 }
 
-.tileHolder {
+/* my work css*/
+.workTileHolder {
   display: flex;
-  margin-left: 6%;
+  justify-content: space-around;
+  z-index: -5;
 }
-.tileHolder img {
+.workTileHolder img, .workTileHolder video {
   cursor: pointer;
 }
-.tile {
+.workTile {
   width: 150px;
-  height: 150px;
+  height: 215px;
   text-align: center;
   cursor: pointer;
+  z-index: 1;
 }
-.tile img {
+.workTile img {
   width: 150px;
   height: 150px;
-  filter: brightness(100%);
-  transition: filter 1s;
+  z-index: 2;
 }
-.tile p {
+.workTile p {
   position: relative;
-  top: -60%;
-  margin: 0px;
   opacity: 0%;
-  color: white;
+  color: var(--accent1);
   opacity: 0%;
-  transition: opacity .5s;
+  top: -20px;
+  transition: opacity .5s ease, top .5s ease;
 }
-.tile:hover p {
-  transition: opacity .5s;
+.workTile hr {
+  border-color: var(--accent1);
+  width: 0px;
+  margin: 10px auto;
+  opacity: 0;
+  transition: width .5s ease, opacity .25s ease-in;
+}
+.workTile:hover hr {
+  width: 100%;
+  opacity: 1;
+}
+.workTile:hover p {
   opacity: 100%;
+  top: 0px;
 }
-.tile:hover img {
-  filter: brightness(25%);
-  transition: filter 1s;
+.workTile::before {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 215px;
+  position: absolute;
+  z-index: -1;
+  background-color: #0e0e0e;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scale(1) translate(-10px, -10px);
+  transition: opacity .5s ease;
+}
+.workTile:hover::before {
+  opacity: 1;
 }
 
-
+/* modal window styles */
 .modal {
   display: none;
   z-index: 1;
@@ -100,87 +246,77 @@ h2 {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100% ;
+  height: 100%;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, .65);
+  z-index: 5;
 }
 .modalContent {
-  background-color: whitesmoke;
-  border-radius: 1em;
-  margin: 2% auto 2% auto;
+  background-color: #1c1c1c;
+  border-radius: .5em;
   width: 75%;
-}
-.modalContent h1 {
-  padding: 40px 20px 20px 20px;
+  display: none;
+  padding: 40px;
+  color: whitesmoke;
+  position: absolute;
+  left: 50%;
+  top: 50;
+  transform: translate(-50%, -45%);
 }
 .modalContent h2 {
   width: fit-content;
-  margin: 10px auto;
-  padding: 10px;
-  color: black;
+  margin: 0px auto;
 }
 .modalContent img {
+  width: 25%;
+  margin: 50px auto;
+  display: block;
+}
+.modalContent video {
   width: 50%;
-  margin: auto;
-  padding: 20px;
+  height: fit-content;
+  margin: 50px auto;
   display: block;
 }
 .modalP1 {
   text-indent: 20px;
   padding: 20px;
   line-height: 160%;
+  text-align: justify;
 }
 .close {
   font-size: 3em;
-  margin: 5px 20px;
   float: right;
   color: grey;
   cursor: pointer;
+  line-height: .6;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+.close:hover {
+  animation: closeDarken 0.5s both;
+}
+.modalFlex {
+  display: flex;
+  justify-content: space-between;
+  min-height: 310px;
+}
+.modalFlex div {
+  margin: auto;
 }
 @keyframes closeDarken {
   from {color:grey;}
   to {color: black;}
-}
-.close:hover {
-  animation: closeDarken 0.5s both;
 }
 
 @keyframes disappear {
   from {opacity: 100%;}
   to {opacity: 0%;}
 }
-#clickToPour {
-  pointer-events: none;
-  position: absolute;
-  width: 18em;
-  height: 18em;
-  left: 55%;
-}
-#ccModal {
-  display: none;
-}
-#fsModal {
-  display: none;
-}
-#drModal {
-  display: none;
-}
+
 #gbModal img {
   width: 20%;
   height: 20%;
-}
-#piModal {
-  display: none;
-}
-#gbModal {
-  display: none;
-}
-#ssModal {
-  display: none;
-}
-#artModal1 {
-  display: none;
-}
-#artModal2 {
-  display: none;
+  margin: 0 15% 0 15%;
 }
