@@ -1,9 +1,9 @@
 const closeBtn = document.getElementsByClassName('close');
 const modalMain = document.getElementById('modal');
 
-const projectTiles = [document.getElementById('cc'), document.getElementById('fs'), document.getElementById('dr'), document.getElementById('pi'), document.getElementById('gb'), document.getElementById('r2s'), document.getElementById('yt'), document.getElementById('ss'), document.getElementById('donut')]
-const myWorkTiles = [document.getElementById('cc'), document.getElementById('fs'), document.getElementById('dr'), document.getElementById('pi'), document.getElementById('gb'), document.getElementById('ss')];
-const modalContent = [document.getElementById('ccModal'), document.getElementById('fsModal'), document.getElementById('drModal'), document.getElementById('piModal'), document.getElementById('gbModal'), document.getElementById('artModal1'), document.getElementById('artModal2'), document.getElementById('ssModal'), document.getElementById('artModal3')]
+const projectTiles = [document.getElementById('be'), document.getElementById('cc'), document.getElementById('fs'), document.getElementById('dr'), document.getElementById('pi'),  document.getElementById('r2s'), document.getElementById('yt'), document.getElementById('ss'), document.getElementById('donut')]
+const myWorkTiles = [document.getElementById('be'), document.getElementById('cc'), document.getElementById('fs'), document.getElementById('dr'), document.getElementById('pi'),  document.getElementById('ss')];
+const modalContent = [document.getElementById('beModal'), document.getElementById('ccModal'), document.getElementById('fsModal'), document.getElementById('drModal'), document.getElementById('piModal'),  document.getElementById('artModal1'), document.getElementById('artModal2'), document.getElementById('ssModal'), document.getElementById('artModal3')]
 
 // array.from takes the Dom collection and turns it into an array to use
 Array.from(closeBtn).forEach((element) => {
