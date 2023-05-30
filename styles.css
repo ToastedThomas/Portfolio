@@ -198,26 +198,25 @@ body.toggled > #icon {
 /* my work css*/
 .workTileHolder {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   z-index: -5;
 }
-.workTileHolder img, .workTileHolder video {
-  cursor: pointer;
-}
 .workTile {
-  width: 150px;
-  height: 215px;
+  width: 200px;
+  height: 265px;
   text-align: center;
   cursor: pointer;
   z-index: 1;
 }
 .workTile img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   z-index: 2;
 }
 .workTile p {
   position: relative;
+  font-weight: bold;
   opacity: 0%;
   color: var(--accent1);
   opacity: 0%;
@@ -242,8 +241,8 @@ body.toggled > #icon {
 .workTile::before {
   content: "";
   display: block;
-  width: 170px;
-  height: 215px;
+  width: 220px;
+  height: 265px;
   position: absolute;
   z-index: -1;
   background-color: #0e0e0e;
@@ -257,9 +256,7 @@ body.toggled > #icon {
 }
 
 /* modal window styles */
-.modal {
-  display: none;
-  z-index: 1;
+#modal {
   position: fixed;
   left: 0;
   top: 0;
@@ -273,7 +270,7 @@ body.toggled > #icon {
   background-color: #1c1c1c;
   border-radius: .5em;
   width: 75%;
-  display: none;
+  height: fit-content;
   padding: 40px;
   color: whitesmoke;
   position: absolute;
@@ -293,7 +290,7 @@ body.toggled > #icon {
 }
 .modalP1 {
   text-indent: 20px;
-  padding: 20px;
+  margin: 20px 20px 20px 0;
   line-height: 160%;
   text-align: justify;
 }
@@ -317,6 +314,18 @@ body.toggled > #icon {
 }
 .modalFlex div {
   margin: auto;
+}
+.skillBox {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+.skillBubble {
+  background-color: var(--gradient1);
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: .9em;
 }
 @keyframes closeDarken {
   from {color:grey;}
